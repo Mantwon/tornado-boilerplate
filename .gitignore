@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+env_tornado/
+.idea/
 *.py[cod]
 
 # C extensions
