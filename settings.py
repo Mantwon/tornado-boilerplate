@@ -8,7 +8,7 @@ import environment
 import logconfig
 
 # Make filepaths relative to settings.
-path = lambda root,*a: os.path.join(root, *a)
+path = lambda root, *a: os.path.join(root, *a)
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 define("port", default=8888, help="run on the given port", type=int)
@@ -33,6 +33,7 @@ class DeploymentType:
         STAGING: 4
     }
 
+
 if 'DEPLOYMENT_TYPE' in os.environ:
     DEPLOYMENT = os.environ['DEPLOYMENT_TYPE'].upper()
 else:
@@ -54,7 +55,7 @@ SYSLOG_FACILITY = logging.handlers.SysLogHandler.LOG_LOCAL2
 # unless you set them here.  Messages will not propagate through a logger
 # unless propagate: True is set.
 LOGGERS = {
-   'loggers': {
+    'loggers': {
         'boilerplate': {},
     },
 }
@@ -66,7 +67,7 @@ else:
 USE_SYSLOG = DEPLOYMENT != DeploymentType.SOLO
 
 logconfig.initialize_logging(SYSLOG_TAG, SYSLOG_FACILITY, LOGGERS,
-        LOG_LEVEL, USE_SYSLOG)
+                             LOG_LEVEL, USE_SYSLOG)
 
 if options.config:
     tornado.options.parse_config_file(options.config)

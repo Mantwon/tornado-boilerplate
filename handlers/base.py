@@ -2,6 +2,7 @@ import json
 import tornado.web
 
 import logging
+
 logger = logging.getLogger('boilerplate.' + __name__)
 
 
@@ -38,7 +39,7 @@ class BaseHandler(tornado.web.RequestHandler):
                 logger.debug(msg)
                 raise tornado.web.HTTPError(400, msg)
             logger.debug("Returning default argument %s, as we couldn't find "
-                    "'%s' in %s" % (default, name, self.request.arguments))
+                         "'%s' in %s" % (default, name, self.request.arguments))
             return default
         arg = self.request.arguments[name]
         logger.debug("Found '%s': %s in JSON arguments" % (name, arg))

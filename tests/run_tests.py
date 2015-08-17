@@ -9,6 +9,7 @@ TEST_MODULES = [
     'test.test_something',
 ]
 
+
 def all():
     try:
         return unittest.defaultTestLoader.loadTestsFromNames(TEST_MODULES)
@@ -19,6 +20,8 @@ def all():
                 __import__(m, globals(), locals())
         raise
 
+
 if __name__ == '__main__':
     import tornado.testing
+
     tornado.testing.main()
