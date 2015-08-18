@@ -19,12 +19,6 @@ tornado.options.parse_command_line()
 MEDIA_ROOT = path(ROOT, 'media')
 TEMPLATE_ROOT = path(ROOT, 'templates')
 
-class MongoConfig:
-    url = '127.0.0.1'
-    port = 30112
-    user = 'mongoadmin'
-    password = 'ads@microsoft'
-
 # Deployment Configuration
 
 class DeploymentType:
