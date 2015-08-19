@@ -65,7 +65,9 @@ class AdsRecord(BaseDocument):
         record.ActualDisplayURL = _fields[10]
         record.ActualDestinationURL = _fields[11]
         record.MatchTypeId = int(_fields[12])
-        record.save()
+        return record
+        # yield record
+        # record.save()
 
 
 class AdsLogRecord(BaseDocument):
@@ -123,7 +125,10 @@ class AdsLogRecord(BaseDocument):
         record.AmountChargedUSDMonthlyExchangeRt = float(_fields[10])
         record.DIS_AdLayoutId = _fields[11]
         record.DIS_AdRelativePosition = _fields[12]
-        record.AdInfoSource = int(_fields[13])
+        if _fields[13] is not None and len(_fields[13]) != 0:
+            record.AdInfoSource = int(_fields[13])
         record.AdInfoScore = int(_fields[14])
         record.MatchTypeId = int(_fields[15])
-        record.save()
+        return record
+        # yield record
+        # record.save()

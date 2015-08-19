@@ -7,7 +7,7 @@ class MongoConfig:
     url = '127.0.0.1'
     port = 30112
     user = 'mongoadmin'
-    password = 'ads@microsoft'
+    password = 'ads_microsoft'
 
 class AdsQueryConfig:
     MinimumReturnRecordCount = 10
