@@ -3,18 +3,20 @@
 # @author   v-shijch
 # @date     2015-08-18 17:53 PM
 
-from mongoengine import StringField, IntField, FloatField, LongField, ListField
-from common import BaseDocument
-
 import logging
 
-logger = logging.getLogger('adsdemo.data.' + __name__)
+from mongoengine import StringField, IntField, FloatField, LongField, ListField
+
+from common import BaseDocument
+
+
+logger = logging.getLogger('adsdemo.ads')
 
 
 class AdsRecord(BaseDocument):
     CampaignId = IntField(required=True)
     ListingId = LongField(required=True)
-    AdId = LongField(required=True, primary_key=True)
+    AdId = LongField(required=True)
     BidKeyword = StringField()
     Matchtypes = ListField(StringField(), default=[])
     ExactBid = IntField()
@@ -84,7 +86,7 @@ class AdsRecord(BaseDocument):
                   self.ActualDisplayURL,
                   self.ActualDestinationURL,
                   self.MatchTypeId
-                  )
+        )
 
 
 class AdsLogRecord(BaseDocument):

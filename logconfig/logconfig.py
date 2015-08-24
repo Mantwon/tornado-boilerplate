@@ -88,6 +88,12 @@ def initialize_logging(syslog_tag, syslog_facility, loggers,
                 'address': syslog_device,
                 'formatter': 'prod',
             },
+            'file': {
+                '()': logging.FileHandler,
+                'level': 'INFO',
+                'formatter': 'tornado',
+                'filename': '/tmp/log/server.log'
+            }
         },
         'loggers': {
         }

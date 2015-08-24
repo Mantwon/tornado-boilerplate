@@ -6,6 +6,10 @@ from tornado.options import define, options
 
 import environment
 import logconfig
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 # Make filepaths relative to settings.
 path = lambda root, *a: os.path.join(root, *a)
@@ -57,6 +61,9 @@ SYSLOG_FACILITY = logging.handlers.SysLogHandler.LOG_LOCAL2
 LOGGERS = {
     'loggers': {
         'boilerplate': {},
+        'adsdemo.importads': {
+            'handlers': ['file', 'console']
+        }
     },
 }
 

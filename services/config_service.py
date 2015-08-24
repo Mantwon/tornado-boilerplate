@@ -9,6 +9,14 @@ class MongoConfig:
     user = 'mongoadmin'
     password = 'ads_microsoft'
 
+
+class MongoConfigMac:
+    url = '127.0.0.1'
+    port = 28018
+    user = ''
+    password = ''
+
+
 class AdsQueryConfig:
     MinimumReturnRecordCount = 10
     Processors = [
