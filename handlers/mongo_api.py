@@ -10,8 +10,9 @@ import logging
 logger = logging.getLogger('adsdemo.api.' + __name__)
 
 def getAdById(_id):
-    try:
+    # try:
 
+    pass
 
 class GetAdHandler(BaseHandler):
     def get(self, _adId):

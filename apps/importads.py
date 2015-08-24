@@ -15,17 +15,33 @@ logger = logging.getLogger('adsdemo.importads.' + __name__)
 
 
 def importAdsRecord(_file, _class):
+    tmp = open(_class.__name__ + 'tmp.out', 'wb')
     count = 0
     with open(_file) as f:
         content = f.readlines()
         for _line in content:
             count += 1
             _record = _class.parse_line(_line)
-            _record.save()
+            if _record is None:
+                print 'failed parsing: ' + _line
+                # logger.warn('failed parsing: ' + _line)
+            _record_in = _class.objects(Q(AdId=_record.AdId) & Q(CampaignId=_record.CampaignId) & Q(ListingId=_record.ListingId)).first()
+            if _record_in is not None:
+                # logger.error('duplicate record detected:\t' + str(_record_in.AdId))
+                print 'duplicate record detected:\t',
+                print _record_in.AdId
+                break
+            tmp.write(str(_record))
+            _record.save(force_inset=True, validate=False)
+            if count % 1000 == 0:
+                print '. ',
             if count % 10000 == 0:
                 print '%d items have been parsed' % count
                 break
+    tmp.flush()
+    tmp.close()
     print 'All %d items have been parsed' % count
+    # logger.info('All %d items have been parsed' % count)
 
 
 def importRecordsByFile(_file, _class):
@@ -47,10 +63,10 @@ if __name__ == '__main__':
                              username=MongoConfig.user,
                              password=MongoConfig.password)
 
-    # ads_corpus = r'D:\projects\Ads\DataPrepareForProj\AdsCorpus0809_900K_WithCampaignId.txt'
-    # ads_log = r'D:\projects\Ads\DataPrepareForProj\AdsLog_1Month_Bing.txt'
-    ads_corpus = r'D:/projects/Ads/DataPrepareForProj/AdsCorpus_100.txt'
-    ads_log = r'D:/projects/Ads/DataPrepareForProj/AdsLog_100.txt'
+    ads_corpus = r'D:\projects\Ads\DataPrepareForProj\AdsCorpus0809_900K_WithCampaignId.txt'
+    ads_log = r'D:\projects\Ads\DataPrepareForProj\AdsLog_1Month_Bing.txt'
+    # ads_corpus = r'D:/projects/Ads/DataPrepareForProj/AdsCorpus_100.txt'
+    # ads_log = r'D:/projects/Ads/DataPrepareForProj/AdsLog_100.txt'
 
     importAdsRecord(ads_corpus, AdsRecord)
     importAdsRecord(ads_log, AdsLogRecord)

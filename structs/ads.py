@@ -69,6 +69,23 @@ class AdsRecord(BaseDocument):
         # yield record
         # record.save()
 
+    def __str__(self):
+        return '%d\t%d\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\n' \
+               % (self.CampaignId,
+                  self.ListingId,
+                  self.AdId,
+                  self.BidKeyword,
+                  ','.join(self.Matchtypes),
+                  str(self.ExactBid) if 'ExactBid' in self._data else '',
+                  str(self.PhraseBid) if 'PhraseBid' in self._data else '',
+                  str(self.BroadBid) if 'BroadBid' in self._data else '',
+                  self.ActualAdTitle,
+                  self.ActualAdDesc,
+                  self.ActualDisplayURL,
+                  self.ActualDestinationURL,
+                  self.MatchTypeId
+                  )
+
 
 class AdsLogRecord(BaseDocument):
     RGUID = StringField(required=True, primary_key=True)
@@ -127,7 +144,8 @@ class AdsLogRecord(BaseDocument):
         record.DIS_AdRelativePosition = _fields[12]
         if _fields[13] is not None and len(_fields[13]) != 0:
             record.AdInfoSource = int(_fields[13])
-        record.AdInfoScore = int(_fields[14])
+        if _fields[14] is not None and len(_fields[14]) != 0:
+            record.AdInfoScore = int(_fields[14])
         record.MatchTypeId = int(_fields[15])
         return record
         # yield record
