@@ -22,6 +22,10 @@ def importAdsRecord(_file, _class):
         for _line in content:
             count += 1
             _record = _class.parse_line(_line)
+            _record_in = _class.objects(__raw__=_record._data).first()
+            if _record_in is not None:
+                logger.info('duplicate record: ' + _line)
+                continue
             _record.save(force_inset=True, validate=False)
             if count % 1000 == 0:
                 print '. ',

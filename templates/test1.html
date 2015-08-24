@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>template function test</title>
+</head>
+<body>
+<ul>
+    {% for item in items %}
+    <li>{{ item }}</li>
+    <li><input value={{ item }} name={{ item }} type="checkbox" {{ checked(item)}} /> {{ item }}
+    </li>
+    {% end %}
+
+    {{ add(2,2) }}
+</ul>
+</body>
+</html>
