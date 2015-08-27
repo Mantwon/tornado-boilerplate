@@ -26,6 +26,9 @@ tornado.options.parse_command_line()
 MEDIA_ROOT = path(ROOT, 'media')
 TEMPLATE_ROOT = path(ROOT, 'templates')
 
+def get_template(_name):
+    assert isinstance(_name, str)
+    return path(TEMPLATE_ROOT, _name)
 
 # Deployment Configuration
 
@@ -55,7 +58,8 @@ settings['xsrf_cookies'] = False
 # settings['xsrf_cookies'] = True
 settings['template_loader'] = tornado.template.Loader(TEMPLATE_ROOT)
 
-_config = MongoConfig()
+_config = MongoConfigMac()
+# _config = MongoConfig()
 db = mongoengine.connect('ads_demo',
                          host=_config.url,
                          port=_config.port,

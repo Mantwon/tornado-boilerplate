@@ -71,6 +71,23 @@ class AdsRecord(BaseDocument):
         # yield record
         # record.save()
 
+    def to_render(self, query):
+        return '''
+        <li class="b_algo" data-bm="6">
+            <h2><a href="https://www.bing.com/search?q=%s"
+                   h="ID=SERP,5135.1">%s</a></h2>
+            <div class="b_caption">
+                <div class="b_snippet"><p>%s</p></div>
+                <ul class="b_factrow">
+                    <li>%s</li>
+                </ul>
+                <div class="b_attribution">
+                    <cite><a href="%s">%s</a></cite>
+                </div>
+            </div>
+        </li>
+        '''.format(query, self.ActualAdTitle, self.ActualAdDesc, self.BidKeyword, self.ActualDestinationURL, self.ActualDisplayURL)
+
     def __str__(self):
         return '%d\t%d\t%d\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%d\n' \
                % (self.CampaignId,

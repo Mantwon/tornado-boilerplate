@@ -6,7 +6,7 @@
     <script type="text/javascript">//<![CDATA[
     si_ST = new Date;
     //]]></script>
-    <!--pc--><title>this is an ad - Bing</title>
+    <!--pc--><title>{{ query }} - Bing</title>
     <meta name="referrer" content="origin">
     <link href="http://www.bing.com/search?format=rss&q=this+is+an+ad&go=%E6%8F%90%E4%BA%A4&qs=n&form=QBLH&pq=this+is+an+ad&sc=8-12&sp=-1&sk=&cvid=b517271fada64230b1fba03a2e5bb085"
           rel="alternate" title="XML" type="text/xml">
@@ -44,112 +44,12 @@
         return true;
     }
     ;
+    function refresh() {
+        var processors = ag_form.p.value;
+        alert(processors)
+    }
     //]]></script>
-    <style type="text/css">.sw_ddbl, .sw_ddbk, .sw_ddw, .sw_ddgy, .sw_ddgn, .sw_poi, .sw_poia, .sw_play, .sw_playh, .sw_playa, .sw_playd, .sw_playp, .sw_st, .sw_sth, .sw_ste, .sw_st2, .sw_sth2, .sw_plus, .sw_minus, .sw_tpcg, .sw_tpcbl, .sw_tpcw, .sw_tpcbk, .sw_arw, .sw_arwh, .sb_pagN, .sb_pagP, .sw_up, .sw_down, .b_expandToggle, .sw_calc, .sw_fbi, .sw_twi, .sw_fbarw, .sw_fbtmb, .sw_twr, .sw_twrt, .sw_twf, .b_fLogo, .b_cm, .sw_rmore, .sw_tpo, .sw_tpoa, .sw_tpoh, .sw_lpoi, .sw_skp {
-        background-image: url(http://bing.com/sa/simg/sw_mg_l_4d_orange.png);
-        background-repeat: no-repeat
-    }
-
-    .sw_play, .sw_playh, .sw_playa, .sw_playd, .sw_playp {
-        background-position: -315px -22px;
-        height: 16px;
-        width: 16px
-    }
-
-    .sw_playh, .sw_playa {
-        background-position: -333px -22px
-    }
-
-    .sw_playd {
-        background-position: -351px -22px
-    }
-
-    .sw_playp {
-        background-position: -369px -22px
-    }
-
-    .sw_st, .sw_sth, .sw_ste, .sw_st2, .sw_sth2 {
-        background-position: -535px -31px;
-        height: 12px;
-        width: 12px;
-        display: inline-block
-    }
-
-    .sw_st2 {
-        background-position: -563px -31px
-    }
-
-    .sw_sth {
-        background-position: -577px -31px
-    }
-
-    .sw_sth2 {
-        background-position: -591px -31px
-    }
-
-    .sw_ste {
-        background-position: -549px -31px
-    }
-
-    .sw_arw, .sw_arwh, .ccmc:hover .sw_arwh {
-        background-position: -463px -32px;
-        height: 11px;
-        width: 14px
-    }
-
-    .sw_arwh, .ccmc:active .sw_arwh {
-        background-position: -447px -32px
-    }
-
-    .sw_ddbl, .sw_ddbk, .sw_ddw, .sw_ddgy, .sw_ddgn {
-        background-position: -266px -32px;
-        height: 4px;
-        width: 7px
-    }
-
-    .sw_ddgn {
-        background-position: -256px -32px
-    }
-
-    .sw_tpcg, .sw_tpcbl, .sw_tpcw, .sw_tpcbk {
-        background-position: -176px -32px;
-        height: 10px;
-        width: 10px
-    }
-
-    .sw_tpcg:hover, .sw_tpcg:active, .sw_tpcg:focus, .sw_tpcbl {
-        background-position: -188px -32px
-    }
-
-    .sw_plus {
-        background-position: -276px -32px;
-        height: 8px;
-        width: 8px
-    }
-
-    .sw_plus:hover, .sw_plus:active, .sw_plus:focus {
-        background-position: -286px -32px
-    }
-
-    .sw_minus {
-        background-position: -256px -38px;
-        height: 2px;
-        width: 8px
-    }
-
-    .sw_minus:hover, .sw_minus:active, .sw_minus:focus {
-        background-position: -266px -38px
-    }
-
-    .sb_pagP, .sb_pagN {
-        background-position: -233px 0;
-        height: 30px;
-        width: 30px
-    }
-
-    .sb_pagP:hover, .sb_pagP:active, .sb_pagP:focus {
-        background-position: -265px 0
-    }
+    <style type="text/css">
 
     .sb_pagN {
         background-position: -169px 0
@@ -157,12 +57,6 @@
 
     .sb_pagN:hover, .sb_pagN:active, .sb_pagN:focus {
         background-position: -201px 0
-    }
-
-    .b_expandToggle, .sw_up, .sw_down {
-        background-position: -228px -32px;
-        height: 8px;
-        width: 12px
     }
 
     .b_active .b_expandToggle, .sw_up {
@@ -182,14 +76,6 @@
         height: 20px
     }
 
-    .sw_poi {
-        background-position: -297px 0
-    }
-
-    .sw_poia {
-        background-position: -319px 0
-    }
-
     .b_fLogo {
         background-position: -402px 0;
         height: 16px;
@@ -202,105 +88,8 @@
         width: 12px
     }
 
-    .sw_calc {
-        background-position: -363px 0;
-        height: 19px;
-        width: 19px
-    }
-
-    .sw_fbi, .sw_twi, .sw_fbarw, .sw_fbtmb, .sw_twr, .sw_twrt, .sw_twf {
-        background-position: -169px -32px;
-        height: 16px;
-        width: 16px;
-        display: inline-block
-    }
-
-    .sw_fbi {
-        background-position: -297px -22px
-    }
-
-    .sw_twi {
-        background-position: -645px 0
-    }
-
-    .sw_fbtmb {
-        background-position: -151px -22px
-    }
-
-    .sw_twr {
-        background-position: -571px -18px;
-        height: 11px;
-        width: 14px
-    }
-
-    .sw_twr:hover, .sw_twr:active, .sw_twr:focus {
-        background-position: -587px -18px
-    }
-
-    .sw_twrt {
-        background-position: -535px -18px;
-        height: 10px;
-        width: 16px
-    }
-
-    .sw_twrt:hover, .sw_twrt:active, .sw_twrt:focus {
-        background-position: -553px -18px
-    }
-
-    .sw_twf, .sw_pipp:hover, .sw_pipp:active, .sw_pipp:focus {
-        background-position: -507px -18px;
-        height: 12px;
-        width: 12px
-    }
-
-    .sw_twf:hover, .sw_twf:active, .sw_twf:focus {
-        background-position: -521px -18px
-    }
-
     .b_externalSearch input.b_searchboxSubmit {
         background-position: -147px 0
-    }
-
-    .sw_pil {
-        background-position: -405px -18px;
-        height: 16px;
-        width: 12px
-    }
-
-    .sw_pil:hover, .sw_pil:active, .sw_pil:focus {
-        background-position: -419px -18px
-    }
-
-    .sw_pifa {
-        background-position: -433px -18px;
-        height: 12px;
-        width: 12px
-    }
-
-    .sw_pifa:hover, .sw_pifa:active, .sw_pifa:focus {
-        background-position: -447px -18px
-    }
-
-    .sw_pit {
-        background-position: -461px -18px;
-        height: 11px;
-        width: 14px
-    }
-
-    .sw_pit:hover, .sw_pit:active, .sw_pit:focus {
-        background-position: -477px -18px
-    }
-
-    .sw_pipp {
-        background-position: -493px -18px;
-        height: 12px;
-        width: 12px
-    }
-
-    .sw_tpo, .sw_tpoh, .sw_tpoa {
-        height: 12px;
-        width: 8px;
-        background-position: -131px -25px
     }
 
     .exp_th .sw_tpoh {
@@ -309,24 +98,6 @@
 
     .exp_ta .sw_tpoh {
         background-position: -131px -25px
-    }
-
-    .sw_rmore {
-        background-position: -121px -25px;
-        height: 12px;
-        width: 8px
-    }
-
-    .sw_lpoi {
-        background-position: -633px -18px;
-        height: 16px;
-        width: 10px
-    }
-
-    .sw_skp {
-        background-position: -645px -18px;
-        height: 16px;
-        width: 16px
     }
 
     html, body #b_results .b_no {
@@ -405,20 +176,6 @@
 
     #b_tween .b_toggle:hover, #b_tween .ftrH:hover {
         background: #f2f2f2
-    }
-
-    .b_scroll {
-        background: #999;
-        border-color: #999
-    }
-
-    .b_scroll:hover {
-        background: #4d4d4d
-    }
-
-    .b_dropdown {
-        background-color: #fff;
-        border-color: #e5e5e5
     }
 
     #b_content .cbtn, .cbtn input {
@@ -773,27 +530,6 @@
         width: 100%
     }
 
-    .c_tlbxTrg {
-        width: 15px;
-        height: 14px;
-        margin: -1px 6px -3px 2px
-    }
-
-    .c_tlbxTrgIcn {
-        margin: 4px 0 2px 3px
-    }
-
-    .c_tlbx {
-        position: absolute;
-        z-index: 6;
-        border: 1px solid;
-        padding: 10px
-    }
-
-    .c_tlbxIS {
-        border-bottom: 1px solid
-    }
-
     .b_deep ul {
         width: 230px
     }
@@ -850,29 +586,6 @@
         padding-left: 0
     }
 
-    .sx_ci {
-        border: 1px solid #e5e5e5;
-        margin-top: 3px;
-        width: 80px;
-        height: 60px
-    }
-
-    .b_favicon {
-        margin: 0 .5em 0 0
-    }
-
-    .b_imagePair:after, .b_vlist2col:after, .b_gridList:after {
-        clear: left
-    }
-
-    .b_imagePair.reverse:after, .b_overhangR:after {
-        clear: right
-    }
-
-    .b_clear, #b_results > li:after, .b_clearfix:after {
-        clear: both
-    }
-
     #b_results > li:after, .b_clearfix:after, .b_imagePair:after, .b_vlist2col:after, .b_gridList:after, .b_overhangR:after {
         content: '.';
         display: block;
@@ -882,18 +595,6 @@
 
     .b_vlist2col ul, .b_gridList ul, .b_float, .b_footer, .b_float_img, .b_pag li, .b_mhdr h2 {
         float: left
-    }
-
-    .b_floatR_img, .b_floatR, .wr_tc {
-        float: right
-    }
-
-    .b_overflow, .b_hList li, .b_1linetrunc, .b_deep p, .b_imageOverlayWrapper {
-        overflow: hidden
-    }
-
-    .b_ansImage {
-        padding: 2px 10px 0 0
     }
 
     .b_creditedImg img, .b_creditedImg .cico {
@@ -956,10 +657,6 @@
         vertical-align: text-bottom
     }
 
-    .b_smLeft {
-        padding-left: 2px
-    }
-
     .b_lLeft, .b_floatR_img, .b_suffix, .b_footnote .cico {
         padding-left: 10px
     }
@@ -974,14 +671,6 @@
 
     .b_hList.b_imgStrip > li {
         padding-right: 1px
-    }
-
-    .b_smRight {
-        padding-right: 2px
-    }
-
-    .fiw, .lc_bkl, .b_mRight, .b_label, .csrc {
-        padding-right: 5px
     }
 
     .b_lRight, .b_hPanel > span, .b_hList > li, .b_imgStrip .imgData, .b_underSearchbox .b_label {
@@ -1067,18 +756,6 @@
         margin-bottom: 10px
     }
 
-    .b_dropdown {
-        position: absolute;
-        z-index: 6
-    }
-
-    .b_scroll {
-        position: relative;
-        top: 0;
-        width: 5px;
-        height: 20px
-    }
-
     .b_pag a {
         display: block;
         min-width: 34px;
@@ -1116,18 +793,6 @@
         margin-bottom: 0
     }
 
-    .b_rTxt {
-        text-align: right
-    }
-
-    .b_cTxt {
-        text-align: center
-    }
-
-    .b_jTxt {
-        text-align: justify
-    }
-
     table {
         width: 100%;
         word-wrap: break-word
@@ -1139,22 +804,6 @@
 
     th {
         text-align: left
-    }
-
-    .sw_poi, .sw_poia {
-        float: left;
-        margin: -3px 5px 0 0;
-        line-height: 20px;
-        text-align: center
-    }
-
-    .ctxt, .ctxtb {
-        padding: 5px 15px;
-        height: 20px
-    }
-
-    .ctxt.b_focusTextMedium, .ctxtb.b_focusTextMedium {
-        height: 58px
     }
 
     input.ctxt, input.ctxtb, .ccal input, .ccal .ccali, .cbtn input, .b_favicon, .b_footnote .cico {
@@ -1247,21 +896,6 @@
         padding-bottom: 4px
     }
 
-    .b_imageOverlayWrapper {
-        margin: -20px 0 0;
-        height: 20px
-    }
-
-    .b_imageOverlay {
-        color: #fff;
-        background-color: #000;
-        padding: 5px
-    }
-
-    .ansP, .ansPF {
-        padding-left: 30px
-    }
-
     .ansP .wpc_pin, .ansPF .wpc_pin {
         margin-left: -30px
     }
@@ -1343,38 +977,6 @@
 
     .b_ad .b_adlabel, .b_ad .b_adlabel strong {
         font: 12px/normal Arial, Helvetica, Sans-Serif
-    }
-
-    .b_focusLabel, .b_secondaryFocus, .b_focusTextExtraSmall {
-        font: 18px/1.2em 'Segoe UI', Arial, Helvetica, Sans-Serif
-    }
-
-    .b_focusTextExtraSmall {
-        line-height: 1.3em
-    }
-
-    .b_entityTitle, .b_prominentFocusLabel, .b_xlText {
-        font: 24px/1.2em 'Segoe UI', Arial, Helvetica, Sans-Serif
-    }
-
-    .b_entityTitle {
-        line-height: normal
-    }
-
-    .b_entitySubTitle {
-        font: 14px/1.2em 'Segoe UI', Arial, Helvetica, Sans-Serif
-    }
-
-    .b_focusTextSmall, .b_focusTextMedium, .b_focusTextLarge {
-        font: 200 32px/1.2em 'Segoe UI', Arial, Helvetica, Sans-Serif
-    }
-
-    .b_focusTextMedium {
-        font-size: 40px
-    }
-
-    .b_focusTextLarge {
-        font-size: 60px
     }
 
     strong, .b_active a, .b_no h4, .b_strong, .cbtn, .b_ad .b_adlabel strong, .cbl {
@@ -1469,38 +1071,6 @@
 
     select:hover, .sic:hover {
         border-color: #0072c5
-    }
-
-    .ctxt, .ctxtb {
-        background-color: #f2f8fc
-    }
-
-    .ctxt, .ctxtb, .ccal {
-        border: 1px solid #bfdcf0
-    }
-
-    .ctxt.b_focusTextMedium, .ctxtb.b_focusTextMedium {
-        padding: 3px 15px 8px 15px;
-        height: 57px
-    }
-
-    .ctxt.b_outTextBox, .ctxtb.b_outTextBox {
-        border-top: 4px solid #0072c5;
-        padding: 0 15px 8px 15px
-    }
-
-    .ctxt.b_outTextBox:focus, .ctxtb.b_outTextBox:focus {
-        border-top: 1px solid #0072c5;
-        padding-top: 3px
-    }
-
-    .ctxt:hover, .ctxtb:hover, .ccal:hover {
-        border-color: #0072c5
-    }
-
-    .ctxt:focus, .ctxtb:focus {
-        border-color: #0072c5;
-        background-color: #fff
     }
 
     .ccal .ctxt, .ccal .ctxtb, .ccal .ctxt:hover, .ccal .ctxtb:hover, .ccal .ctxt:focus, .ccal .ctxtb:focus, .ccal .ccali {
@@ -1672,14 +1242,6 @@
         background-repeat: no-repeat
     }
 
-    .b_scopebarWindows {
-        background-position: -575px 0
-    }
-
-    .b_scopebarWindows:hover, .b_scopebarWindows:active, .b_scopebarWindows:focus {
-        background-position: -592px 0
-    }
-
     .b_searchboxSubmit {
         background-position: -97px 0
     }
@@ -1748,7 +1310,7 @@
     .b_logo.b_animate {
         width: 81px;
         height: 60px;
-        background-image: url('/s/a/b_logo_anim.png');
+        background-image: url('http://bing.com/s/a/b_logo_anim.png');
         background-position: 0;
         margin: -9px 7px -5px 12px
     }
@@ -2657,25 +2219,6 @@
         vertical-align: top
     }
 
-    .id_link_text {
-        position: absolute;
-        right: 20px
-    }
-
-    .id_right_link {
-        float: right
-    }
-
-    #b_idProviders, #b_idSettings {
-        line-height: 35px
-    }
-
-    .b_idProvidersBottom {
-        padding-bottom: 5px;
-        margin-bottom: 5px;
-        border-bottom: 1px solid #ccc
-    }
-
     #b_idProviders .idp_fb, #b_idProviders .idp_wlid {
         margin: 9px 6px 0 0
     }
@@ -2712,15 +2255,6 @@
 
     .ftrS .ftrD {
         margin-right: 10px
-    }
-
-    .ftrSbR {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        margin: 5px 0;
-        padding-right: 3px
     }
 
     .ftrB .sw_ddbk {
@@ -3273,48 +2807,12 @@
         white-space: nowrap
     }
 
-    .irhcs1 {
-        font-weight: bold
-    }
-
-    .irhcs2 {
-        color: #898994
-    }
-
-    .irhcs3 {
-        color: #568e1a
-    }
-
-    .sb_doct_txt {
-        color: #1020d0;
-        font-size: 11px;
-        line-height: 2.1;
-        margin-right: 3px
-    }
-
     #b_context .b_rs .b_vList > li {
         padding-bottom: 4px
     }
 
     #b_context .b_rs > .b_vList {
         padding-bottom: 6px
-    }
-
-    #fbpgbt {
-        background: #f2f2f2;
-        border: 1px solid #999;
-        bottom: 0;
-        color: #36b;
-        cursor: pointer;
-        display: block;
-        height: 28px;
-        line-height: 28px;
-        min-width: 110px;
-        padding: 0 5px;
-        position: fixed;
-        right: 20px;
-        text-align: center;
-        z-index: 4
     }
 
     #fbpgbt:hover {
@@ -3345,7 +2843,7 @@
             </nav>
             <div id="id_h" role="complementary" data-bm="3" style="display: block;"><a
                     href="http://www.bing.com/search?q=this+is+an+ad&go=%e6%8f%90%e4%ba%a4&qs=n&pq=this+is+an+ad&sc=8-12&sp=-1&sk=&cvid=b517271fada64230b1fba03a2e5bb085&setmkt=ja-jp&setlang=ja-jp&FORM=SEENCN"
-                    id="mkt_swc_v2" h="ID=SERP,5015.1" style="display: inline-block;">日本のBing.com</a><a
+                    id="mkt_swc_v2" h="ID=SERP,5015.1" style="display: inline-block;">Team 4 @ Microsoft</a><a
                     href="http://www.bing.com/rewards/dashboard" class="id_button" id="id_rh" h="ID=SERP,5032.1"><span
                     id="id_rc">4</span><span class="id_avatar sw_meIc" title="Bing Rewards"></span></a><a
                     href="http://www.bing.com/rewards/dashboard" class="b_hide" id="id_rwl" h="ID=SERP,5031.1"></a><a
@@ -3378,21 +2876,31 @@
             <div id="sw_tfbb"></div>
         </div>
     </div>
-    <form action="http://www.bing.com/search" id="sb_form">
+    <form action="/" id="sb_form" method="get">
         <a href="http://www.bing.com/?FORM=Z9FD1" class="b_logoArea" h="ID=SERP,5026.1">
             <h1 class="b_logo" data-bm="1">Bing</h1></a>
 
         <div class="b_searchboxForm" data-bm="2"><input class="b_searchbox" id="sb_form_q" name="q"
                                                         title="Enter your search term" type="search"
-                                                        value="this is an ad" maxlength="1000"
+                                                        value="{{ query }}" maxlength="1000"
                                                         onfocus="_ge(&#39;b_header&#39;).className=&#39;b_focus&#39;;"
                                                         dir="" autocapitalize="off" autocorrect="off" autocomplete="off"
                                                         spellcheck="false">
             <span class="b_searchboxSubmitWrapper">
                 <input type="submit" class="b_searchboxSubmit" id="sb_form_go" title="Search" tabindex="0"
                        name="go"></span>
-
-            <div id="sw_as"></div>
+            <div id="sw_as">
+                <li class="b_ans" data-bm="23"><h2>Using Algorithms</h2>
+                    <ul class="b_vList">
+                        {% for processor in processors %}
+                        <li>
+                            <input value={{ processor.idx }} name="p" type="checkbox"
+                                    {{ checked(processor) }}  /> {{ processor.name }}
+                        </li>
+                        {% end %}
+                    </ul>
+                </li>
+            </div>
         </div>
     </form>
 </header>
@@ -3432,64 +2940,62 @@ _w.sched = _w.sched || function () {
 <div id="b_content">
     <div id="b_tween"><span class="sb_count" data-bm="4">{{ num_results }} results</span></div>
     <ol id="b_results">
+        {% for _ad in result %}
         <li class="b_algo" data-bm="6">
-            <h2><a href="https://www.bing.com/search?q={{ title }}"
-                   h="ID=SERP,5135.1">{{ title }}</a></h2>
+            <h2><a href="https://www.bing.com/search?q={{ query }}"
+                   h="ID=SERP,5135.1">{{ _ad.ActualAdTitle }}</a></h2>
 
             <div class="b_caption">
-                <div class="b_snippet"><p>The terms <strong>anno Domini</strong> (<strong>AD</strong> or
-                    <strong>A.D</strong>.) and before Christ (BC or B.C.) are used to label or number years in the
-                    Julian and Gregorian calendars. The term <strong>anno Domini</strong> is ...</p></div>
+                <div class="b_snippet"><p>{{ _ad.ActualAdDesc }}</p></div>
                 <ul class="b_factrow">
-                    <li><a href="http://en.wikipedia.org/wiki/Anno_Domini#History" h="ID=SERP,5126.1">History</a>&nbsp;·
-                    </li>
-                    <li><a href="http://en.wikipedia.org/wiki/Anno_Domini#Historical_birth_date_of_Jesus"
-                           h="ID=SERP,5127.1">Historical birth ...</a>&nbsp;·
-                    </li>
+                    <li>{{ _ad.BidKeyword }}</li>
                 </ul>
-            </div>
-        </li>
-        <li class="b_ans" data-bm="21">
-            <div class="b_rs"><h2>Related searches for {{ query }}</h2>
-
-                <div class="b_rich">
-                    <div class="b_vlist2col">
-                        <ul>
-                            <li><a href="/search?q=Anno+Domini+means&amp;FORM=QSRE1" h="ID=SERP,5436.1">Anno Domini
-                                means</a></li>
-                            <li><a href="/search?q=A+D+The+Bible+Continues&amp;FORM=QSRE2" h="ID=SERP,5437.1">A D The
-                                Bible Continues</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="/search?q=A+D+The+Bible+Continues+Full+Movie&amp;FORM=QSRE5"
-                                   h="ID=SERP,5440.1">A D The Bible Continues Full Movie</a></li>
-                        </ul>
-                    </div>
+                <div class="b_attribution">
+                    <cite><a href="{{ _ad.ActualDestinationURL }}">{{ _ad.ActualDisplayURL }}</a></cite>
                 </div>
             </div>
         </li>
-    </ol>
-    <ol id="b_context">
-        <li class="b_ans" data-bm="23"><h2>Using Algorithms</h2>
-            <ul class="b_vList">
-                <li><a href="/search?q=Anno+Domini+means&amp;FORM=R5FD" h="ID=SERP,5450.1">Anno Domini means</a></li>
-                <li><a href="/search?q=Anno+Domini+Definition&amp;FORM=R5FD1" h="ID=SERP,5451.1">Anno Domini
-                    Definition</a></li>
-                <li><a href="/search?q=A+D+TV+Show&amp;FORM=R5FD2" h="ID=SERP,5452.1">A D TV Show</a></li>
-                <li><a href="/search?q=Anno+Domini+Meaning+English&amp;FORM=R5FD3" h="ID=SERP,5453.1">Anno Domini
-                    Meaning English</a></li>
-                <li><a href="/search?q=A+D+The+Bible+Continues&amp;FORM=R5FD4" h="ID=SERP,5454.1">A D The Bible
-                    Continues</a></li>
-                <li><a href="/search?q=A+D+The+Bible+Continues+Full+Movie&amp;FORM=R5FD5" h="ID=SERP,5455.1">A D The
-                    Bible Continues Full Movie</a></li>
-                <li><a href="/search?q=Watch+and+the+Bible+Continues+Online&amp;FORM=R5FD6" h="ID=SERP,5456.1">Watch and
-                    the Bible Continues Online</a></li>
-                <li><a href="/search?q=Bible+Ad+TV+Show&amp;FORM=R5FD7" h="ID=SERP,5457.1">Bible <strong>Ad</strong> TV
-                    Show</a></li>
-            </ul>
+        {% end %}
+        <li class="b_pag"><span class="sb_count">{{ num_results }} results</span></li>
+        <li class="b_pag">
+            <nav aria-label="navigation" role="menu"><h4 class="b_hide">Pagination</h4>
+                <ul class="sb_pagF">
+                    <li><a class="sb_pagS">1</a></li>
+                    <li>
+                        <a href="/search?q={{ query }}"
+                           h="ID=SERP,5612.1">2</a></li>
+                    <li>
+                        <a href="/search?q={{ query }}"
+                           h="ID=SERP,5613.1">3</a></li>
+                    <li>
+                        <a href="/search?q={{ query }}"
+                           h="ID=SERP,5614.1">4</a></li>
+                    <li>
+                        <a href="/search?q={{ query }}"
+                           h="ID=SERP,5615.1">5</a></li>
+                    <li>
+                        <a href="/search?q={{ query }}"
+                           class="sb_pagN" title="Next " h="ID=SERP,5616.1">
+                            <div class="sw_next">Next</div>
+                        </a></li>
+                </ul>
+            </nav>
         </li>
     </ol>
+        <ol id="b_context">
+            <li class="b_ans" data-bm="23"><h2>Using Algorithms</h2>
+                <ul class="b_vList">
+                    {% for processor in processors %}
+                    <li>
+                        <input value={{ processor.idx }} name="p" type="checkbox"
+                                {{ checked(processor) }}  /> {{ processor.name }}
+                    </li>
+                    {% end %}
+                </ul>
+            </li>
+        </ol>
 </div>
+</form>
 <footer class="b_footer" data-bm="18">
     <table>
         <tbody>

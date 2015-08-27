@@ -11,20 +11,6 @@ from structs.common import AdResponse
 from structs.ads import AdsRecord
 import json
 
-class FakeAdsServeHandler(BaseHandler):
-    def post(self):
-        _query, _minN = self.get_arguments('query', 'minN')
-        print _query
-        _results = []
-        _ads = AdsRecord.objects().skip(random.randint(0, 100)).limit(_minN)
-        for _ad in _ads:
-            assert isinstance(_ad, AdsRecord)
-            _response = AdResponse(_ad.ListingId, _ad.AdId, random.random())
-            _results.append(_response.format())
-        _results = sorted(_results, key=lambda _result:_result['score'])
-        self.set_header('Content-Type', 'application/json; charset=UTF-8')
-        self.finish(json.dumps(_results))
-
 
 class TestHandler(BaseHandler):
     def get(self):

@@ -5,7 +5,6 @@
 <body>
 <ul>
     {% for item in items %}
-    <li>{{ item }}</li>
     <li><input value={{ item }} name={{ item }} type="checkbox" {{ checked(item)}} /> {{ item }}
     </li>
     {% end %}
