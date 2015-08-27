@@ -10,7 +10,6 @@ from handlers.base import BaseHandler
 from structs.common import AdResponse
 from structs.ads import AdsRecord
 import json
-from utilities import json_util
 
 class FakeAdsServeHandler(BaseHandler):
     def post(self):
@@ -22,8 +21,9 @@ class FakeAdsServeHandler(BaseHandler):
             assert isinstance(_ad, AdsRecord)
             _response = AdResponse(_ad.ListingId, _ad.AdId, random.random())
             _results.append(_response.format())
+        _results = sorted(_results, key=lambda _result:_result['score'])
         self.set_header('Content-Type', 'application/json; charset=UTF-8')
-        self.finish(json.dumps(json_util._json_convert(self.__dict__), default=json_util.default))
+        self.finish(json.dumps(_results))
 
 
 class TestHandler(BaseHandler):
