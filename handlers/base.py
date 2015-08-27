@@ -44,3 +44,19 @@ class BaseHandler(tornado.web.RequestHandler):
         arg = self.request.arguments[name]
         logger.debug("Found '%s': %s in JSON arguments" % (name, arg))
         return arg
+
+    def get_arguments(self, *fields):
+        _values = []
+        _missed_values = []
+        try:
+            _arguments_json = json.loads(self.request.body)
+            for _field in fields:
+                if _field not in _arguments_json:
+                    _missed_values.append(_field)
+            if len(_missed_values) > 0:
+                self.finish('failed to get arguments: ' + str(_missed_values))
+            for _field in fields:
+                _values.append(_arguments_json[_field])
+            return _values
+        except Exception, e:
+            self.finish('unable to get arguments: ' + str(e))

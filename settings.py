@@ -8,6 +8,9 @@ import environment
 import logconfig
 import sys
 
+from services.config_service import MongoConfig, MongoConfigMac
+import mongoengine
+
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -22,6 +25,7 @@ tornado.options.parse_command_line()
 
 MEDIA_ROOT = path(ROOT, 'media')
 TEMPLATE_ROOT = path(ROOT, 'templates')
+
 
 # Deployment Configuration
 
@@ -46,9 +50,18 @@ else:
 settings = {}
 settings['debug'] = DEPLOYMENT != DeploymentType.PRODUCTION or options.debug
 settings['static_path'] = MEDIA_ROOT
-settings['cookie_secret'] = "your-cookie-secret"
-settings['xsrf_cookies'] = True
+settings['cookie_secret'] = "dectinc@microsoft:ads"
+settings['xsrf_cookies'] = False
+# settings['xsrf_cookies'] = True
 settings['template_loader'] = tornado.template.Loader(TEMPLATE_ROOT)
+
+_config = MongoConfig()
+db = mongoengine.connect('ads_demo',
+                         host=_config.url,
+                         port=_config.port,
+                         username=_config.user,
+                         password=_config.password)
+settings['db'] = db
 
 SYSLOG_TAG = "boilerplate"
 SYSLOG_FACILITY = logging.handlers.SysLogHandler.LOG_LOCAL2

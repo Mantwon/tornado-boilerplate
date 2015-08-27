@@ -6,6 +6,17 @@
 from datetime import datetime
 
 from mongoengine import Document
+import random
+
+class AdResponse():
+    def __init__(self, _listing_id, _ad_id, _score):
+        self.listingId = _listing_id
+        self.adId = _ad_id
+        self.score = _score
+
+    def format(self):
+        _data = {'ListingId':self.listingId, 'AdId':self.adId, 'score':self.score}
+        return _data
 
 
 class BaseDocument(Document):

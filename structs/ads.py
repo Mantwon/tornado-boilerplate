@@ -16,7 +16,7 @@ logger = logging.getLogger('adsdemo.ads')
 class AdsRecord(BaseDocument):
     CampaignId = IntField(required=True)
     ListingId = LongField(required=True)
-    AdId = LongField(required=True)
+    AdId = LongField(required=True, unique_with='ListingId')
     BidKeyword = StringField()
     Matchtypes = ListField(StringField(), default=[])
     ExactBid = IntField()
